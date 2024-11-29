@@ -1,9 +1,5 @@
 #! /usr/bin/python
-# -*- coding: utf-8 -*-
-# @Date    : 2018-01-30 14:05:51
-# @Author  : WDD 
-# @Link    : https://github.com/dongdawn
-# @Version : v1
+
 import sys
 import os
 import numpy as np
