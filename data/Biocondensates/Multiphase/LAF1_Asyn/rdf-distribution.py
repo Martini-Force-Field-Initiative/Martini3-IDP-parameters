@@ -1,6 +1,5 @@
 #! /usr/bin/python
-# -*- coding: utf-8 -*-
-# calculate gyrate distribution in different trajectory interval to analyze convergence and conformation ensemble
+
 import sys
 import os
 import numpy as np
