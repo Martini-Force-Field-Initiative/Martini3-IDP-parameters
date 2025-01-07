@@ -2,7 +2,7 @@
 Martini3-IDP force field parameters and all related data/scripts.
 
 
-structure data for most simulations from the paper are available at:
+structure data for most simulations from the paper are available at: https://zenodo.org/records/14608855
 
 
 Martinize2 and Polyply format force field files are available at: https://github.com/Martini-Force-Field-Initiative/Martini3-IDP-parameters/tree/main/force%20filed
