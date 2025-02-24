@@ -8,3 +8,5 @@
 - Martinize2 and Polyply format force field files are available at: https://github.com/Martini-Force-Field-Initiative/Martini3-IDP-parameters/tree/main/force%20filed
 
 - User tutorials are available at: https://github.com/Martini-Force-Field-Initiative/Martini3-IDP-parameters/tree/main/force%20filed
+
+- Detailed processed data and python scripts of each testing are provided under corresponding folder
