@@ -1,3 +1,5 @@
 Slab geometry simulation of LLPS (biocondnesate) systems, including A1LCD, FUSLCD, GY23, ProA+H1, TIA1LCD, mfp-3S, with their density profiles during traj.
 
 Droplet geomerty simulation of multiphase condensate systems, including LAF1+FUSLCD, LAF1+Asyn. Python script for droplet radial density estimation is provided.
+
+LLPS-plot-script.tcl is used for all LLPS snapshots ploting using VMD.
