@@ -67,10 +67,35 @@ pyemma.plots.plot_density(*pca_concatenated[:index1, :2].T, ax=axes[0], cbar=Fal
 pyemma.plots.plot_density(*pca_concatenated[index1:index2, :2].T, ax=axes[1], cbar=False,nbins=40, logscale=True)
 pyemma.plots.plot_density(*pca_concatenated[index2:index3, :2].T, ax=axes[2], cbar=False,nbins=40, logscale=True)
 pyemma.plots.plot_density(*pca_concatenated[index3:, :2].T, ax=axes[3], cbar=True,nbins=40, logscale=True)
-axes[0].set_title('Martini3-IDP Rg=3.05nm',fontproperties=font_prop)  
-axes[1].set_title('Martini3 Rg=1.67nm',fontproperties=font_prop) 
-axes[2].set_title('a99SBdisp Rg=2.13nm',fontproperties=font_prop) 
-axes[3].set_title('a03ws Rg=2.22nm',fontproperties=font_prop) 
+
+#Conformation entropy cal
+#define the 2d histogram edges based on PCA plots
+xedges=np.arange(-220,70,10)
+yedges=np.arange(-100,100,10)
+H_M3IDP, xedges, yedges = np.histogram2d(pca_concatenated[:index1,0], pca_concatenated[:index1,1], bins=(xedges, yedges))
+H_M3, xedges, yedges = np.histogram2d(pca_concatenated[index1:index2,0], pca_concatenated[index1:index2,1], bins=(xedges, yedges))
+H_ref1, xedges, yedges = np.histogram2d(pca_concatenated[index2:index3,0], pca_concatenated[index2:index3,1], bins=(xedges, yedges))
+H_ref2, xedges, yedges = np.histogram2d(pca_concatenated[index3:,0], pca_concatenated[index3:,1], bins=(xedges, yedges))
+
+prob_M3IDP=H_M3IDP.T/frames_M3IDP
+prob_M3=H_M3.T/frames_M3
+prob_ref1=H_ref1.T/frames_ref1
+prob_ref2=H_ref2.T/frames_ref2
+print(prob_ref2.shape)
+#Shannon entropy
+entropy_M3IDP=entropy(prob_M3IDP.reshape(-1,1))
+entropy_M3=entropy(prob_M3.reshape(-1,1))
+entropy_ref1=entropy(prob_ref1.reshape(-1,1))
+entropy_ref2=entropy(prob_ref2.reshape(-1,1))
+print(entropy_M3IDP)
+print(entropy_M3)
+print(entropy_ref1)
+print(entropy_ref2)
+
+axes[0].set_title('Martini3-IDP Rg=3.05nm Entropy={}'.format(round(entropy_M3IDP[0],2)),fontproperties=font_prop)  
+axes[1].set_title('Martini3 Rg=1.67nm Entropy={}'.format(round(entropy_M3[0],2)),fontproperties=font_prop) 
+axes[2].set_title('a99SBdisp Rg=2.13nm Entropy={}'.format(round(entropy_ref1[0],2)),fontproperties=font_prop) 
+axes[3].set_title('a03ws Rg=2.22nm Entropy={}'.format(round(entropy_ref2[0],2)),fontproperties=font_prop) 
 
 for ax in axes.flat[0:4]:
     ax.set_xlabel('PC 1',fontproperties=tick_prop)
