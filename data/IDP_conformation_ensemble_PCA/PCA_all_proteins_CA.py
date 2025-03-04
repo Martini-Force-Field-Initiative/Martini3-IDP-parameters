@@ -4,6 +4,7 @@ import matplotlib.font_manager as font_manager
 import numpy as np
 np.bool = np.bool_
 import pickle as pkl
+from scipy.stats import entropy
 import sys
 
 def save_pickle(filename, pickle_obj):
