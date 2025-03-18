@@ -1,13 +1,5 @@
 # Polyply and Martinize2 format Martini3-IDP force field files used to generate IDP/IDR protein models.
 
-**Tutorial3:**
-
-Martini3-IDP force field have been internally implemented in the developing version [Martinize2](https://github.com/marrink-lab/vermouth-martinize) with the name martini3IDP (will be released soon!).
-
-The IDR region could be defined by `-idr-tune -id-regions` flags. The remaing folded domains still adopt the secondary structure from DSSP or `-ss`.
-```
-martinize2 -f AF-CK1.pdb -x cg.pdb -o topol.top -ff martini3IDP -p backbone -elastic -ef 700.0 -el 0 -eu 0.85 -eunit 1:292 -idr-tune -id-regions 293:415 -ss CCCEETTTEEEEEEEEECSSSEEEEEEETTTTEEEEEEEEETTCSSCCHHHHHHHHHHHTTSTTCCCEEEEEEETTEEEEEEECCCCBHHHHHHHTTTCCCHHHHHHHHHHHHHHHHHHHHTTEECCCCCGGGEEECCGGGTTCEEECCCTTCEECBCTTTCCBCCCCBSTTCCSCTTTCCHHHHTTBCCCHHHHHHHHHHHHHHHHHSSCTTSSCCCSSGGGHHHHHHHHHHHSCHHHHTTTSCHHHHHHHHHHHHSCSSCCCCHHHHHHHHHHHHHHTTCCCSCCCGGGCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-```
 
 **Tutorial1:**
 
@@ -44,3 +36,14 @@ python3 topology_merging_general.py
 ```
 4. It’s noted that the terminal bead type in each domain fragment (i.e. the crosslinking region in multi-domain protein) has to be checked and adjusted the default Martini3 backbone bead in output mol.itp.   
 5. The coordinates file of complete multi-domain protein is easy to obtain after a short simulation due to the bonded linking between fragments in mol.itp.
+
+
+**Tutorial3:**
+
+Martini3-IDP force field have been internally implemented in the developing version [Martinize2](https://github.com/marrink-lab/vermouth-martinize) with the name martini3IDP (will be released soon!).
+
+The IDR region could be defined by `-idr-tune -id-regions` flags. The remaing folded domains still adopt the secondary structure from DSSP or `-ss`.
+```
+martinize2 -f AF-CK1.pdb -x cg.pdb -o topol.top -ff martini3IDP -p backbone -elastic -ef 700.0 -el 0 -eu 0.85 -eunit 1:292 -idr-tune -id-regions 293:415 -ss CCCEETTTEEEEEEEEECSSSEEEEEEETTTTEEEEEEEEETTCSSCCHHHHHHHHHHHTTSTTCCCEEEEEEETTEEEEEEECCCCBHHHHHHHTTTCCCHHHHHHHHHHHHHHHHHHHHTTEECCCCCGGGEEECCGGGTTCEEECCCTTCEECBCTTTCCBCCCCBSTTCCSCTTTCCHHHHTTBCCCHHHHHHHHHHHHHHHHHSSCTTSSCCCSSGGGHHHHHHHHHHHSCHHHHTTTSCHHHHHHHHHHHHSCSSCCCCHHHHHHHHHHHHHHTTCCCSCCCGGGCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+```
+
