@@ -1,5 +1,13 @@
 # Polyply and Martinize2 format Martini3-IDP force field files used to generate IDP/IDR protein models.
 
+**Tutorial3:**
+Martini3-IDP force field have been implemented in the latest version [Martinize2](https://github.com/marrink-lab/vermouth-martinize).
+
+The IDR region could be defined by `-idr-tune -id-regions` flags. The remaing folded domains still adopt the secondary structure from DSSP or `-ss`.
+```
+martinize2 -f AF-CK1.pdb -x cg.pdb -o topol.top -ff martini3IDP -p backbone -elastic -ef 700.0 -el 0 -eu 0.85 -eunit 1:292 -idr-tune -id-regions 293:415 -ss CCCEETTTEEEEEEEEECSSSEEEEEEETTTTEEEEEEEEETTCSSCCHHHHHHHHHHHTTSTTCCCEEEEEEETTEEEEEEECCCCBHHHHHHHTTTCCCHHHHHHHHHHHHHHHHHHHHTTEECCCCCGGGEEECCGGGTTCEEECCCTTCEECBCTTTCCBCCCCBSTTCCSCTTTCCHHHHTTBCCCHHHHHHHHHHHHHHHHHSSCTTSSCCCSSGGGHHHHHHHHHHHSCHHHHTTTSCHHHHHHHHHHHHSCSSCCCCHHHHHHHHHHHHHHTTCCCSCCCGGGCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+```
+
 **Tutorial1:**
 
 A Martinize2 format Martini3-IDP force field file is provided, which deals with the construction discrepancy between standard Martini3 protein and Martini3-IDP well. For example, `-scFix` is applied in Martini3 protein model to define sidechain orientation relying on atomistic reference structure, whereas general bonded parameters are used to define sidechain dynamics in Martini3-IDP independent on reference atomistic structure.
