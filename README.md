@@ -1,4 +1,10 @@
 # Supporting scripts and data for "Martini3-IDP: Improved Martini 3 Force Field for Disordered Proteins"
+
+### Reference
+Wang, L., Brasnett, C., Borges-Araújo, L. et al. Martini3-IDP: improved Martini 3 force field for disordered proteins. *Nat Commun* 16, 2874 (2025). 
+https://doi.org/10.1038/s41467-025-58199-2
+
+
 ### Martini3-IDP force field parameters and all related data/scripts.
 
 
