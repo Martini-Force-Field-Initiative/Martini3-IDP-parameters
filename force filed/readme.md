@@ -3,7 +3,7 @@
 
 **Tutorial1:**
 
-A Martinize2 format Martini3-IDP force field file is provided, which deals with the construction discrepancy between standard Martini3 protein and Martini3-IDP well. For example, `-scFix` is applied in Martini3 protein model to define sidechain orientation relying on atomistic reference structure, whereas general bonded parameters are used to define sidechain dynamics in Martini3-IDP independent on reference atomistic structure.
+A Martinize2 format Martini3-IDP force field file is provided, which deals with the construction discrepancy between standard Martini3 protein and Martini3-IDP well. To integrate Martini3-IDP into Martinize2, copy the provided `/force_fileds` and `/mappings` directories to `/vermouth/data/force_fields/` and `/vermouth/data/mappings/`, respectively, and rename them as Martini3-IDP.  For example, `-scFix` is applied in Martini3 protein model to define sidechain orientation relying on atomistic reference structure, whereas general bonded parameters are used to define sidechain dynamics in Martini3-IDP independent on reference atomistic structure.
 
 In this tutorial, we use full length CK1 protein atomistic structure as Martinize2 input. As IDR structure is hardly resolved in crystal structure, [Alphafold prediction](https://alphafold.ebi.ac.uk/) or [Swiss-model](https://swissmodel.expasy.org/) could be used to generate full length atomistic protein structure with high-confidence folded domain. Elastic network bias was generated only in the folded domain (by `-eunit` flag). To define IDR easily, a new secondary structure `D` is provided in the `-ss` flag. It’s noted that `D` isn’t a pre-set secondary structure, so `D` secondary structure should be manually added to `vermouth/dssp/dssp.py` ss_cg list.
 ```
